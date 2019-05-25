@@ -4,4 +4,5 @@ const templatesAndSelectors = [
    {template: "Navbar", selector: "nav"},
    {template: "Summary", selector: ".summary"}
 ]
+
 inputTemplates(templatesAndSelectors)
