@@ -1,25 +1,24 @@
 {
-  "name": "daily-discipline",
+  "name": "daily-expenses",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "babel ./assets/js --out-dir bundle --presets=@babel/env --minified"
+    "scss": "node-sass ./assets/scss -o ./assets/css"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/SafeAndS0und/daily-discipline.git"
+    "url": "git+https://github.com/SafeAndS0und/daily-expenses.git"
   },
   "author": "Nikodem Lorenz",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/SafeAndS0und/daily-discipline/issues"
+    "url": "https://github.com/SafeAndS0und/daily-expenses/issues"
   },
-  "homepage": "https://github.com/SafeAndS0und/daily-discipline#readme",
-  "devDependencies": {
-    "@babel/cli": "^7.4.4",
-    "@babel/core": "^7.4.5",
-    "@babel/preset-env": "^7.4.5"
+  "homepage": "https://github.com/SafeAndS0und/daily-expenses#readme",
+  "devDependencies": {},
+  "dependencies": {
+    "node-sass": "^4.12.0"
   }
 }
