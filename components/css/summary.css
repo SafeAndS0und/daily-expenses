@@ -24,4 +24,5 @@
     grid-auto-flow: column;
     font-size: 0.88em;
     color: #423f59;
-    font-style: italic; }
+    font-style: italic;
+    justify-items: center; }

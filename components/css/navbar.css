@@ -16,8 +16,11 @@ nav {
     cursor: pointer; }
     nav .burger:hover {
       transform: scale(1.1); }
+      nav .burger:hover .ingredient {
+        background-color: white !important; }
     nav .burger .ingredient {
       background-color: #6F6C97;
       width: 50px;
       height: 3px;
-      margin-bottom: 4px; }
+      margin-bottom: 4px;
+      transition: .3s; }

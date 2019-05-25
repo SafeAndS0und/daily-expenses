@@ -24,6 +24,10 @@ nav {
 
     &:hover{
       transform: scale(1.1);
+
+      .ingredient{
+        background-color: white !important;
+      }
     }
 
     .ingredient{
@@ -31,6 +35,7 @@ nav {
       width: 50px;
       height: 3px;
       margin-bottom: 4px;
+      transition: .3s;
     }
   }
 }
