@@ -1,0 +1,10 @@
+.summary .money-status {
+  text-align: center; }
+  .summary .money-status h1 {
+    font-size: 2.5em;
+    color: white;
+    margin: 0; }
+  .summary .money-status p {
+    font-size: .91em;
+    color: #68638D;
+    margin: 4px 0; }
