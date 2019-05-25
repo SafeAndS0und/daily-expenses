@@ -8,3 +8,20 @@
     font-size: .91em;
     color: #68638D;
     margin: 4px 0; }
+
+.summary .chart {
+  margin-top: 100px;
+  width: 100vw; }
+  .summary .chart .line {
+    display: block;
+    width: 100vw;
+    height: 1px;
+    box-shadow: 0 0 16px 0 #8f8383;
+    background-image: linear-gradient(to right, #212343, #3d2f49, #513e50, #614f58, #6e6164, #6e6164, #6e6164, #6e6164, #614f58, #513e50, #3d2f49, #212343); }
+  .summary .chart .hours {
+    padding: 8px 5px;
+    display: grid;
+    grid-auto-flow: column;
+    font-size: 0.88em;
+    color: #423f59;
+    font-style: italic; }

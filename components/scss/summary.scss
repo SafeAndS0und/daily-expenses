@@ -16,4 +16,26 @@
     }
 
   }
+
+  .chart {
+    margin-top: 100px;
+    width: 100vw;
+
+    .line {
+      display: block;
+      width: 100vw;
+      height: 1px;
+      box-shadow: 0 0 16px 0 rgba(143,131,131,1);
+      background-image: linear-gradient(to right, #212343, #3d2f49, #513e50, #614f58, #6e6164, #6e6164, #6e6164, #6e6164, #614f58, #513e50, #3d2f49, #212343);
+    }
+
+    .hours{
+      padding: 8px 5px;
+      display: grid;
+      grid-auto-flow: column;
+      font-size: 0.88em;
+      color: #423f59;
+      font-style: italic;
+    }
+  }
 }

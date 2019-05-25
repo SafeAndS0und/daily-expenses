@@ -14,4 +14,23 @@ nav {
       font-size: 0.9em;
     }
   }
+
+  .burger{
+    position: absolute;
+    right: 20px;
+    top: 30px;
+    transition: .3s;
+    cursor: pointer;
+
+    &:hover{
+      transform: scale(1.1);
+    }
+
+    .ingredient{
+      background-color: #6F6C97;
+      width: 50px;
+      height: 3px;
+      margin-bottom: 4px;
+    }
+  }
 }
