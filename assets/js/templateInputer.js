@@ -1,10 +1,14 @@
-export default function (){
+export default function (templatesAndSelectors){
 
-   fetch('/daily-expenses/components/templates/Navbar.html')
-      .then(response => {
-         return response.text()
-      })
-      .then(data => {
-         document.querySelector("nav").innerHTML = data
-      })
+   templatesAndSelectors.forEach(obj => {
+
+      fetch(`/daily-expenses/components/templates/${obj.template}.html`)
+         .then(response => {
+            return response.text()
+         })
+         .then(data => {
+            document.querySelector(obj.selector).innerHTML = data
+         })
+
+   })
 }
