@@ -1,6 +1,7 @@
 nav {
   color: white;
   padding: 10px 20px;
+  position: relative;
 
   .today {
 
@@ -37,5 +38,27 @@ nav {
       margin-bottom: 4px;
       transition: .3s;
     }
+  }
+
+  .menu{
+    color: #7b7794;
+    position: absolute;
+    right: 100px;
+    top: 28px;
+    opacity: 0;
+    transition: .4s;
+
+    p{
+      display: inline;
+
+      &:hover{
+        color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .menu-active{
+    opacity: 1;
   }
 }

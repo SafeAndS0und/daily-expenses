@@ -3,7 +3,8 @@ main > section > div article {
   margin: 0 0 8px 30px;
   background-image: linear-gradient(to right, #323060, #2d2d59, #292a51, #25264a, #212343);
   width: 75%;
-  padding: 3px 10px; }
+  padding: 3px 10px;
+  transition: .25s; }
   main > section > div article:before {
     content: '';
     position: absolute;

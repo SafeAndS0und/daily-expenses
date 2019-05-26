@@ -6,6 +6,7 @@ main > section > div {
     background-image: linear-gradient(to right, #323060, #2d2d59, #292a51, #25264a, #212343);
     width: 75%;
     padding: 3px 10px;
+    transition: .25s;
 
     &:before {
       content: '';

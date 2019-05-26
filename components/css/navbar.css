@@ -1,6 +1,7 @@
 nav {
   color: white;
-  padding: 10px 20px; }
+  padding: 10px 20px;
+  position: relative; }
   nav .today h3 {
     margin: 0;
     font-size: 1.3em;
@@ -24,3 +25,17 @@ nav {
       height: 3px;
       margin-bottom: 4px;
       transition: .3s; }
+  nav .menu {
+    color: #7b7794;
+    position: absolute;
+    right: 100px;
+    top: 28px;
+    opacity: 0;
+    transition: .4s; }
+    nav .menu p {
+      display: inline; }
+      nav .menu p:hover {
+        color: white;
+        cursor: pointer; }
+  nav .menu-active {
+    opacity: 1; }
