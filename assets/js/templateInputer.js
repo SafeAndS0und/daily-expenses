@@ -1,14 +1,14 @@
-export default function (templatesAndSelectors){
+export default function(templatesAndSelectors){
 
-   templatesAndSelectors.forEach(obj => {
+   templatesAndSelectors.forEach(obj =>{
+      let i = 0
 
-      fetch(`/daily-expenses/components/templates/${obj.template}.html`)
-         .then(response => {
-            return response.text()
-         })
-         .then(data => {
-            document.querySelector(obj.selector).innerHTML = data
-         })
+      do{
+         fetch(`/daily-expenses/components/templates/${obj.template}.html`)
+            .then(response => response.text())
+            .then(data => document.querySelector(obj.selector).innerHTML += data)
 
+         i++
+      } while(obj.props && obj.props[i])
    })
 }

@@ -1,0 +1,49 @@
+main > section > div {
+
+  article {
+    position: relative;
+    margin: 0 0 8px 30px;
+    background-image: linear-gradient(to right, #323060, #2d2d59, #292a51, #25264a, #212343);
+    width: 75%;
+    padding: 3px 10px;
+
+    &:before {
+      content: '';
+      position: absolute;
+      left: -5px;
+      top: 0;
+      height: 100%;
+      background-color: #3463E3;
+      width: 5px;
+    }
+
+    header{
+      width: 100%;
+      display: grid;
+      grid-auto-flow: column;
+
+
+      .hour{
+        justify-self: start;
+        color: #5F56A2;
+        font-size: .85em;
+        margin: 0;
+      }
+
+      .amount{
+        justify-self: end;
+        color: #4F70DC;
+        font-size: .92em;
+        font-weight: 700;
+        margin: 0;
+      }
+    }
+
+    .event{
+      color: #716AA2;
+      font-size: .9em;
+      margin: 0;
+      padding: 10px 0;
+    }
+  }
+}
