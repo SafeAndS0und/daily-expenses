@@ -1,14 +1,24 @@
 export default function(templatesAndSelectors){
 
-   templatesAndSelectors.forEach(obj =>{
-      let i = 0
+   return new Promise((resolve, reject) => {
 
-      do{
-         fetch(`/daily-expenses/components/templates/${obj.template}.html`)
-            .then(response => response.text())
-            .then(data => document.querySelector(obj.selector).innerHTML += data)
+      templatesAndSelectors.forEach(obj =>{
+         let i = 0
+         do{
+            fetch(`/daily-expenses/components/templates/${obj.template}.html`)
+               .then(response => response.text())
+               .then(data => {
+                  document.querySelector(obj.selector).innerHTML += data
+               })
+               i++
 
-         i++
-      } while(obj.props && obj.props[i])
+
+         } while(obj.props && obj.props[i])
+
+         setTimeout(resolve, 1000) //todo hmm
+
+      })
+
    })
+
 }

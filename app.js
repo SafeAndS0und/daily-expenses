@@ -30,13 +30,21 @@ const templatesAndSelectors = [
    }
 ]
 
-setTimeout(() => {
+async function start(){
+
+   await inputTemplates(templatesAndSelectors)
+
    templatesAndSelectors
       .filter(obj => obj.props)
       .forEach(fillComponentProps)
-},150)
+
+}
+
+start()
 
 
 
-inputTemplates(templatesAndSelectors) //fill the index.html with templates
+
+
+
 
