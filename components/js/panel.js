@@ -1,9 +1,12 @@
 
 setTimeout(() => {
-   const panels = document.querySelectorAll('article')
+   const panels = document.querySelectorAll('article > .panel-info')
 
 
    panels.forEach(panel => {
+
+      //find the icon to the corresponding panel
+      const icon = panel.parentElement.querySelector('i')
 
       // pc
       let mouseX
@@ -12,14 +15,14 @@ setTimeout(() => {
       function moveHandler(e) {
          difference = event.x - mouseX // calculate difference to move the element
          panel.style.transform = `translateX(${difference}px)`
+         panel.style.boxShadow = '2px 2px 6px 0px rgba(0,0,0,0.75)'
+         icon.className = 'fas fa-check-square fa-2x icon moving'
       }
 
 
 
       panel.addEventListener('mousedown', event => {
          mouseX = event.x
-         panel.style.boxShadow = '2px 2px 6px 0px rgba(0,0,0,0.75)'
-
          panel.addEventListener('mousemove', moveHandler)
       })
 
@@ -27,6 +30,7 @@ setTimeout(() => {
          panel.style.boxShadow = '0 0 0 0 rgba(0,0,0,0.75)'
          panel.style.transform = `translateX(0px)`
          panel.removeEventListener('mousemove', moveHandler)
+         icon.className = 'fas fa-shopping-cart icon fa-2x'
       })
 
 
@@ -38,11 +42,14 @@ setTimeout(() => {
       function mobileMoveHandler(e) {
          mobileDifference = event.changedTouches[0].screenX - touchX // calculate difference to move the element
          panel.style.transform = `translateX(${mobileDifference}px)`
+
+         panel.style.boxShadow = '2px 2px 6px 0px rgba(0,0,0,0.75)'
+         icon.className = 'fas fa-check-square fa-2x icon moving'
       }
 
       panel.addEventListener('touchstart', event => {
          touchX = event.changedTouches[0].screenX
-         panel.style.boxShadow = '2px 2px 6px 0px rgba(0,0,0,0.75)'
+
 
          panel.addEventListener('touchmove', mobileMoveHandler)
       })
@@ -51,6 +58,15 @@ setTimeout(() => {
          panel.style.boxShadow = '0 0 0 0 rgba(0,0,0,0.75)'
          panel.style.transform = `translateX(0px)`
          panel.removeEventListener('touchmove', mobileMoveHandler)
+
+         // put it into history or delete it from history
+         if(mobileDifference > 150){
+            panel.parentElement.style.opacity = '0'
+            setTimeout( () => panel.parentElement.style.display = 'none', 320)
+         }
+
+
+         icon.className = 'fas fa-shopping-cart icon fa-2x'
       })
 
    })
