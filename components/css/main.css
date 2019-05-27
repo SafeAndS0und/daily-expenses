@@ -17,12 +17,23 @@ main section .main-section-title {
   color: white;
   font-size: 1.1em; }
 
+main .add {
+  position: fixed;
+  bottom: 12px;
+  right: 12px;
+  padding: 16px 18px;
+  background-color: #3571fa;
+  color: white;
+  border-radius: 50%; }
+  main .add:hover {
+    background-color: #1660ff; }
+
 footer {
   display: grid;
   grid-auto-flow: column;
   width: 100%;
   padding: 0 15px;
-  margin-top: 80px; }
+  margin-top: 120px; }
   footer p {
     color: #413e51;
     font-size: .9em; }

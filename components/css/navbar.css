@@ -1,40 +1,42 @@
-nav {
+nav > div {
   color: white;
   padding: 10px 20px;
-  position: relative; }
-  nav .today h3 {
+  position: relative;
+  display: grid;
+  grid-auto-flow: column;
+  grid-template-columns: 80% 15% 5%;
+  width: 100%; }
+  nav > div .today h3 {
     margin: 0;
     font-size: 1.3em;
     padding-bottom: 5px; }
-  nav .today p {
+  nav > div .today p {
     margin: 0;
     font-size: 0.9em; }
-  nav .burger {
-    position: absolute;
-    right: 20px;
-    top: 30px;
+  nav > div .burger {
+    justify-self: start;
+    padding-top: 18px;
     transition: .3s;
     cursor: pointer; }
-    nav .burger:hover .ingredient {
+    nav > div .burger:hover .ingredient {
       background-color: white !important; }
-    nav .burger .ingredient {
+    nav > div .burger .ingredient {
+      justify-self: end;
       background-color: #6F6C97;
       width: 50px;
       height: 3px;
       margin-bottom: 4px;
       transition: .3s; }
-  nav .menu {
+  nav > div .menu {
+    padding-top: 18px;
     color: #7b7794;
-    position: absolute;
-    right: 100px;
-    top: 28px;
     opacity: 0;
     transition: .4s;
     font-size: .83em; }
-    nav .menu p {
+    nav > div .menu p {
       display: inline; }
-      nav .menu p:hover {
+      nav > div .menu p:hover {
         color: white;
         cursor: pointer; }
-  nav .menu-active {
+  nav > div .menu-active {
     opacity: 1; }
