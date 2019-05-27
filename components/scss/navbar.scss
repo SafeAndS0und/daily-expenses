@@ -64,3 +64,10 @@ nav > div {
     opacity: 1;
   }
 }
+
+
+@media only screen and (max-width: 800px) {
+  nav > div {
+    grid-template-columns: 35% auto 15%;
+  }
+}

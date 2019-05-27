@@ -4,7 +4,8 @@ body, html {
   padding: 0;
   background-color: #212343;
   font-family: 'Open Sans', sans-serif;
-  font-size: 16px; }
+  font-size: 16px;
+  overflow-x: hidden; }
 
 *, *:after, *:before {
   box-sizing: border-box; }
@@ -19,8 +20,8 @@ main section .main-section-title {
 
 main .add {
   position: fixed;
-  bottom: 12px;
-  right: 12px;
+  bottom: 24px;
+  right: 16px;
   padding: 16px 18px;
   background-color: #3571fa;
   color: white;

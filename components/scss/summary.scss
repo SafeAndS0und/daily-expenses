@@ -21,6 +21,33 @@
     margin-top: 80px;
     width: 100%;
 
+    .columns{
+      display: grid;
+      grid-auto-flow: column;
+      align-items: end;
+
+      article{
+        width: 24px;
+        display: inline-block;
+        text-align: center;
+        color: #d6b4c5;
+        vertical-align: center;
+        font-size: .92em;
+        background-image: linear-gradient(to top, #212343, #3e2c5a, #7d3966, #ac4565, #d25a5a);
+        box-shadow: 0 0 10px 0 rgba(190, 68, 77, 0.25);
+
+
+        &:first-child{
+          height: 60px;
+          justify-self: center;
+
+        }
+        &:last-child{
+          height: 120px;
+        }
+      }
+    }
+
     .line {
       display: block;
       width: 100%;
