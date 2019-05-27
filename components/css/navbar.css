@@ -15,10 +15,8 @@ nav {
     top: 30px;
     transition: .3s;
     cursor: pointer; }
-    nav .burger:hover {
-      transform: scale(1.1); }
-      nav .burger:hover .ingredient {
-        background-color: white !important; }
+    nav .burger:hover .ingredient {
+      background-color: white !important; }
     nav .burger .ingredient {
       background-color: #6F6C97;
       width: 50px;
@@ -31,7 +29,8 @@ nav {
     right: 100px;
     top: 28px;
     opacity: 0;
-    transition: .4s; }
+    transition: .4s;
+    font-size: .83em; }
     nav .menu p {
       display: inline; }
       nav .menu p:hover {

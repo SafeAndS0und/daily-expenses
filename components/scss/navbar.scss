@@ -24,7 +24,6 @@ nav {
     cursor: pointer;
 
     &:hover{
-      transform: scale(1.1);
 
       .ingredient{
         background-color: white !important;
@@ -47,6 +46,7 @@ nav {
     top: 28px;
     opacity: 0;
     transition: .4s;
+    font-size: .83em;
 
     p{
       display: inline;

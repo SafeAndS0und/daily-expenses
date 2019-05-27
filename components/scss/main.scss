@@ -30,24 +30,27 @@ main {
 }
 
 footer {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 80px;
 
   p {
     color: #413e51;
-    position: absolute;
-    left: 10px;
-    bottom: 0;
     font-size: .9em;
   }
 
-  i {
-    position: absolute;
-    right: 10px;
-    bottom: 10px;
-    color: #686f82;
-    cursor: pointer;
+  a {
+    justify-self: end;
 
-    &:hover {
-      color: white;
+    i {
+      color: #686f82;
+      cursor: pointer;
+
+      &:hover {
+        color: white;
+      }
     }
   }
 

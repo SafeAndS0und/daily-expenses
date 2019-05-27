@@ -17,18 +17,19 @@ main section .main-section-title {
   color: white;
   font-size: 1.1em; }
 
-footer p {
-  color: #413e51;
-  position: absolute;
-  left: 10px;
-  bottom: 0;
-  font-size: .9em; }
-
-footer i {
-  position: absolute;
-  right: 10px;
-  bottom: 10px;
-  color: #686f82;
-  cursor: pointer; }
-  footer i:hover {
-    color: white; }
+footer {
+  display: grid;
+  grid-auto-flow: column;
+  width: 100%;
+  padding: 0 15px;
+  margin-top: 80px; }
+  footer p {
+    color: #413e51;
+    font-size: .9em; }
+  footer a {
+    justify-self: end; }
+    footer a i {
+      color: #686f82;
+      cursor: pointer; }
+      footer a i:hover {
+        color: white; }
