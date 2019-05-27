@@ -4,7 +4,20 @@ main > section > div article {
   background-image: linear-gradient(to right, #323060, #2d2d59, #292a51, #25264a, #212343);
   width: 75%;
   padding: 3px 10px;
-  transition: .15s; }
+  transition: .15s;
+  -webkit-touch-callout: none;
+  /* iOS Safari */
+  -webkit-user-select: none;
+  /* Safari */
+  -khtml-user-select: none;
+  /* Konqueror HTML */
+  -moz-user-select: none;
+  /* Firefox */
+  -ms-user-select: none;
+  /* Internet Explorer/Edge */
+  user-select: none;
+  /* Non-prefixed version, currently
+                                  supported by Chrome and Opera */ }
   main > section > div article:before {
     content: '';
     position: absolute;

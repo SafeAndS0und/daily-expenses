@@ -10,7 +10,6 @@ setTimeout(() => {
       let difference
 
       function moveHandler(e) {
-         console.log(event)
          difference = event.x - mouseX // calculate difference to move the element
          panel.style.transform = `translateX(${difference}px)`
       }
