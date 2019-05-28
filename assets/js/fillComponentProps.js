@@ -9,7 +9,6 @@ export default function(templateInfo){
       panel.querySelector('header > .amount').innerHTML = prop.amount
       panel.querySelector('.event').innerHTML = prop.event
 
-      console.dir(panel)
       if(templateInfo.selector === '.history > div') {
          panel.className = 'history-before'
       }

@@ -9,10 +9,7 @@ const templatesAndSelectors = [
    {
       template: "Panel",
       selector: ".history > div",
-      props: [
-         {hour: '14:33', amount: '12,00', event: `Buy a asdf`},
-         {hour: '16:30', amount: '35,00', event: `Do some groceries`},
-      ]
+      props: []
    }
 ]
 
