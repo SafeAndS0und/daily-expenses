@@ -18,6 +18,11 @@ nav {
   width: 100%;
 }
 
+main, header, footer {
+  max-width: 900px;
+  margin: auto;
+}
+
 main {
 
   section {

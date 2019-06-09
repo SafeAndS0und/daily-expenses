@@ -12,7 +12,6 @@ export default function(templatesAndSelectors){
                })
                i++
 
-
          } while(obj.props && obj.props[i])
 
          setTimeout(resolve, 1000) //todo hmm
