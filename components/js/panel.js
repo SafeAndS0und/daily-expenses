@@ -59,8 +59,9 @@ const createPanels = () =>{
             setTimeout(() => panel.parentElement.style.display = 'none', 320)
 
             const expenses = JSON.parse(localStorage.getItem('expenses'))
+            const history = JSON.parse(localStorage.getItem('history'))
 
-            expenses.forEach(panelInfo =>{
+            expenses.concat(history).forEach(panelInfo =>{
                if(panelInfo.event === panel.querySelector('.event').innerHTML){
                   expenses.splice(expenses.indexOf(panelInfo), 1) // deleting this object from localstorage
 
@@ -70,9 +71,21 @@ const createPanels = () =>{
 
 
                   if(history){ // if there is already item in history, just add the deleted item from expenses
-                     const historyObjs = JSON.parse(history)
-                     historyObjs.push(panelInfo)
-                     localStorage.setItem('history', JSON.stringify(historyObjs))
+
+                     // if it's a history element delete it entirely
+                     if(panel.parentElement.className === 'history-before'){
+
+                        const historyObjs = JSON.parse(history)
+                        const index = historyObjs.findIndex(obj => obj.event === panelInfo.event)
+                        historyObjs.splice(index, 1)
+                        localStorage.setItem('history', JSON.stringify(historyObjs))
+
+                     } else{ // else put it into the history folder
+                        const historyObjs = JSON.parse(history)
+                        historyObjs.push(panelInfo)
+                        localStorage.setItem('history', JSON.stringify(historyObjs))
+                     }
+
                   } else{
                      localStorage.setItem('history', `[${JSON.stringify(panelInfo)}]`)
                   }
