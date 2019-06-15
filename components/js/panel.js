@@ -1,7 +1,5 @@
-setTimeout(() =>{
+const createPanels = () =>{
    const panels = document.querySelectorAll('article > .panel-info')
-
-
    panels.forEach(panel =>{
 
       //find the icon to the corresponding panel
@@ -46,8 +44,6 @@ setTimeout(() =>{
 
       panel.addEventListener('touchstart', event =>{
          touchX = event.changedTouches[0].screenX
-
-
          panel.addEventListener('touchmove', mobileMoveHandler)
       })
 
@@ -65,27 +61,30 @@ setTimeout(() =>{
             const expenses = JSON.parse(localStorage.getItem('expenses'))
 
             expenses.forEach(panelInfo =>{
-               if(panelInfo.event === panel.querySelector('.event').innerHTML)
+               if(panelInfo.event === panel.querySelector('.event').innerHTML){
                   expenses.splice(expenses.indexOf(panelInfo), 1) // deleting this object from localstorage
 
-               localStorage.setItem('expenses', JSON.stringify(expenses))
+                  localStorage.setItem('expenses', JSON.stringify(expenses))
 
-               const history = localStorage.getItem('history')
+                  const history = localStorage.getItem('history')
 
-               if(history){ // if there is already item in history, just add the deleted item from expenses
-                  const historyObjs = JSON.parse(history)
-                  historyObjs.push(panelInfo)
-                  localStorage.setItem('history', JSON.stringify(historyObjs))
-               } else{
-                  localStorage.setItem('history', `[${JSON.stringify(panelInfo)}]`)
+
+                  if(history){ // if there is already item in history, just add the deleted item from expenses
+                     const historyObjs = JSON.parse(history)
+                     historyObjs.push(panelInfo)
+                     localStorage.setItem('history', JSON.stringify(historyObjs))
+                  } else{
+                     localStorage.setItem('history', `[${JSON.stringify(panelInfo)}]`)
+                  }
                }
             })
          }
-
 
          icon.className = 'fas fa-shopping-cart icon fa-2x'
       })
 
    })
+}
 
-}, 1000) //todo yeah
+
+setTimeout(createPanels, 1000) //todo yeah
