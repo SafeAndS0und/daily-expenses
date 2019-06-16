@@ -9,10 +9,10 @@ if('serviceWorker' in navigator){
 }
 
 
-const expenses = JSON.parse(localStorage.getItem('expenses'))
-const history = JSON.parse(localStorage.getItem('history'))
+async function drawPage(){
 
-async function start(){
+   const expenses = JSON.parse(localStorage.getItem('expenses'))
+   const history = JSON.parse(localStorage.getItem('history'))
 
    if(expenses)
       expenses.forEach(panelObj =>{
@@ -32,7 +32,9 @@ async function start(){
 
 }
 
-start()
+drawPage()
+
+
 
 
 
