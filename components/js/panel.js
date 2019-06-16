@@ -60,7 +60,7 @@ const createPanels = () =>{
             // put it into history or delete it from history if its dragged enough
             if(mobileDifference > 150){
 
-               // make the expense disappear
+
                function removeExpense(){
                   // visually
                   panel.parentElement.style.opacity = '0'
@@ -71,7 +71,7 @@ const createPanels = () =>{
 
                   let removedExpense = null
 
-                  expenses = expenses.filter(expense => { // compare to the html
+                  expenses = expenses.filter(expense =>{ // compare to the html
                      if(expense.event !== panel.children[1].innerText)
                         return true
                      else
@@ -83,7 +83,6 @@ const createPanels = () =>{
                   return removedExpense
                }
 
-               // make it appear in the history
                function moveToHistory(expense){
                   // visually
                   const article = document.createElement('article')
@@ -102,16 +101,43 @@ const createPanels = () =>{
 
                              <i class="fas fa-shopping-cart icon fa-2x"></i>
                `
+                  // article.children[0].addEventListener('touchstart', mobileTouchStartHandler)
+                  // article.children[0].addEventListener('touchmove', mobileMoveHandler)
+                  // article.children[0].addEventListener('touchend', touchEndHandler)
                   document.querySelector('.history div').appendChild(article)
 
                   // to storage
                   const history = JSON.parse(localStorage.getItem('history'))
-                  history.push(expense)
-                  localStorage.setItem('history', JSON.stringify(history))
+                  if(!history)
+                     localStorage.setItem('history', `[${JSON.stringify(expense)}]`)
+                  else{
+                     history.push(expense)
+                     localStorage.setItem('history', JSON.stringify(history))
+                  }
 
+                  createPanels()
                }
 
-               moveToHistory(removeExpense())
+               function removeFromHistory(){
+                  // visually
+                  panel.parentElement.style.opacity = '0'
+                  setTimeout(() => panel.parentElement.style.display = 'none', 320)
+
+                  let history = JSON.parse(localStorage.getItem('history'))
+                  let removedHistory
+
+                  history = history.filter(history =>{ // compare to the html
+                     if(history.event !== panel.children[1].innerText)
+                        return true
+                     else
+                        removedHistory = history
+                  })
+                  localStorage.setItem('history', JSON.stringify(history))
+
+                  return removedHistory
+               }
+
+               panel.parentElement.className === 'history-before' ? removeFromHistory() : moveToHistory(removeExpense())
 
             }
 
@@ -126,70 +152,3 @@ const createPanels = () =>{
 
 
 setTimeout(createPanels, 1000) //todo yeah
-
-
-//
-//
-// const fromExpToHis = (expenses, panelInfo) =>{
-//    expenses.splice(expenses.indexOf(panelInfo), 1) // from expenses => history
-//    localStorage.setItem('expenses', JSON.stringify(expenses))
-//
-//    console.log(expenses, panelInfo)
-//
-//    const article = document.createElement('article')
-//    article.className = 'history-before'
-//    article.innerHTML = `
-//                              <div class="panel-info">
-//                                 <header>
-//                                     <p class="hour">
-//                                     ${panelInfo.hour}
-//                                     </p>
-//                                     <p class="amount">${panelInfo.amount}</p>
-//                                 </header>
-//
-//                                 <h4 class="event">${panelInfo.event}</h4>
-//                              </div>
-//
-//                              <i class="fas fa-shopping-cart icon fa-2x"></i>
-//                `
-//    document.querySelector('.history div').appendChild(article)
-//    createPanels()
-//
-// }
-//
-// panel.parentElement.style.opacity = '0'
-// setTimeout(() => panel.parentElement.style.display = 'none', 320)
-//
-// const expenses = JSON.parse(localStorage.getItem('expenses'))
-// const history = JSON.parse(localStorage.getItem('history'))
-//
-// expenses.concat(history).forEach(panelInfo =>{
-//    if(panelInfo.event === panel.querySelector('.event').innerHTML){
-//       const history = localStorage.getItem('history')
-//
-//
-//       if(history){ // if there is already item in history, just add the deleted item from expenses
-//
-//          // if it's a history element delete it entirely
-//          if(panel.parentElement.className === 'history-before'){
-//
-//             const historyObjs = JSON.parse(history)
-//             const index = historyObjs.findIndex(obj => obj.event === panelInfo.event)
-//             historyObjs.splice(index, 1)
-//             localStorage.setItem('history', JSON.stringify(historyObjs))
-//
-//          } else{ // else put it into the history folder
-//             const historyObjs = JSON.parse(history)
-//             historyObjs.push(panelInfo)
-//             localStorage.setItem('history', JSON.stringify(historyObjs))
-//
-//             fromExpToHis(expenses, panelInfo)
-//          }
-//
-//       } else{
-//          localStorage.setItem('history', `[${JSON.stringify(panelInfo)}]`)
-//
-//          fromExpToHis(expenses, panelInfo)
-//       }
-//    }
-// })
