@@ -3,6 +3,8 @@ import fillComponentProps from './assets/js/fillComponentProps.js'
 import templatesAndSelectors from './assets/js/templatesAndSelectors.js'
 
 
+
+
 //register a service worker
 if('serviceWorker' in navigator){
    navigator.serviceWorker.register('sw.js')
@@ -35,8 +37,7 @@ async function drawPage(){
 
 }
 
-drawPage()
-
+export default drawPage()
 
 
 

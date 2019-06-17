@@ -1,5 +1,32 @@
 .summary .money-status {
   text-align: center; }
+  .summary .money-status input {
+    width: 75%;
+    padding: 10px 6px;
+    background-color: #23294e;
+    border: 0;
+    margin: 10px 0;
+    font-size: 1em;
+    color: #dadada;
+    display: none;
+    transition: .4s; }
+    .summary .money-status input:active, .summary .money-status input:focus {
+      outline: none; }
+  .summary .money-status button {
+    margin: 0;
+    display: none;
+    height: 100%;
+    font-size: 1em;
+    padding: 8px 12px;
+    transform: translateY(1px);
+    background-color: #3844cb;
+    font-weight: 500;
+    letter-spacing: 1px;
+    color: white;
+    border: 0;
+    font-family: 'Open Sans', sans-serif; }
+    .summary .money-status button:active, .summary .money-status button:focus {
+      outline: none; }
   .summary .money-status h1 {
     font-size: 2.5em;
     color: white;
