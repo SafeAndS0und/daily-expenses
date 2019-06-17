@@ -101,9 +101,6 @@ const createPanels = () =>{
 
                              <i class="fas fa-shopping-cart icon fa-2x"></i>
                `
-                  // article.children[0].addEventListener('touchstart', mobileTouchStartHandler)
-                  // article.children[0].addEventListener('touchmove', mobileMoveHandler)
-                  // article.children[0].addEventListener('touchend', touchEndHandler)
                   document.querySelector('.history div').appendChild(article)
 
                   // to storage
