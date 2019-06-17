@@ -8,18 +8,19 @@ export default function(templatesAndSelectors){
             return
 
          let i = 0
+         let promises = []
          do{
-            fetch(`/daily-expenses/components/templates/${obj.template}.html`)
-               .then(response => response.text())
-               .then(data =>{
+            promises.push(fetch(`/daily-expenses/components/templates/${obj.template}.html`))
+            i++
+         } while(obj.props && obj.props[i])
+
+         Promise.all(promises)
+            .then(resArr =>{
+               resArr.forEach(async res =>{
+                  const data = await res.text()
                   document.querySelector(obj.selector).innerHTML += data
                })
-            i++
-
-         } while(obj.props && obj.props[i])
-         {
-
-         }
+            })
 
          setTimeout(resolve, 1000) //todo hmm
 

@@ -14,6 +14,7 @@ async function drawPage(){
    const expenses = JSON.parse(localStorage.getItem('expenses'))
    const history = JSON.parse(localStorage.getItem('history'))
 
+   // pushing data from localstorage to one object
    if(expenses)
       expenses.forEach(panelObj =>{
          templatesAndSelectors[2].props.push(panelObj)
@@ -24,8 +25,10 @@ async function drawPage(){
          templatesAndSelectors[3].props.push(panelObj)
       })
 
+   // use the mentioned object to create the html elements (without data)
    await inputTemplates(templatesAndSelectors)
 
+   // fill the data to the created elements above - only these ones that have props (data)
    templatesAndSelectors
       .filter(obj => obj.props)
       .forEach(fillComponentProps)
