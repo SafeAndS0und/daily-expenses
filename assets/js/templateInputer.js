@@ -1,31 +1,26 @@
 export default function(templatesAndSelectors){
 
-   return new Promise((resolve, reject) =>{
+   let promises = []
 
-      templatesAndSelectors.forEach(obj =>{
+   templatesAndSelectors.forEach(obj =>{
 
-         if(obj.props && obj.props.length === 0) // don't draw empty panels
-            return
+      if(obj.props && obj.props.length === 0) // don't draw empty panels
+         return
 
-         let i = 0
-         let promises = []
-         do{
-            promises.push(fetch(`/daily-expenses/components/templates/${obj.template}.html`))
-            i++
-         } while(obj.props && obj.props[i])
+      let i = 0
 
-         Promise.all(promises)
-            .then(resArr =>{
-               resArr.forEach(async res =>{
-                  const data = await res.text()
-                  document.querySelector(obj.selector).innerHTML += data
-               })
+      do{
+         let promise = fetch(`/daily-expenses/components/templates/${obj.template}.html`)
+            .then(async res =>{
+               const data = await res.text()
+               document.querySelector(obj.selector).innerHTML += data
             })
+         promises.push(promise)
+         i++
+      } while(obj.props && obj.props[i])
 
-         setTimeout(resolve, 1000) //todo hmm
-
-      })
 
    })
 
+   return Promise.all(promises)
 }
