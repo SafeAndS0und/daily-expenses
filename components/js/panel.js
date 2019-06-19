@@ -1,3 +1,5 @@
+import refreshSummary from './summary.js'
+
 const createPanels = () =>{
    const panels = document.querySelectorAll('article > .panel-info')
    panels.forEach(panel =>{
@@ -80,6 +82,8 @@ const createPanels = () =>{
 
                   localStorage.setItem('expenses', JSON.stringify(expenses))
 
+                  refreshSummary()
+
                   return removedExpense
                }
 
@@ -113,6 +117,7 @@ const createPanels = () =>{
                   }
 
                   createPanels()
+                  refreshSummary()
                }
 
                function removeFromHistory(){
@@ -130,6 +135,8 @@ const createPanels = () =>{
                         removedHistory = history
                   })
                   localStorage.setItem('history', JSON.stringify(history))
+
+                  refreshSummary()
 
                   return removedHistory
                }
