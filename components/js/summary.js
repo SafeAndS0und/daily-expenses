@@ -36,6 +36,30 @@ async function initiate(){
          localStorage.setItem('limit', input.value)
       }
    })
+
+   drawColumns()
 }
 
 initiate()
+
+function drawColumns(){
+   const history = JSON.parse(localStorage.getItem('history'))
+   const chart = document.querySelector('.chart .columns')
+
+   const moneySpent
+      = history
+      .map(({amount}) => amount)
+      .reduce((prev, curr) => parseInt(prev) + parseInt(curr), 0)
+
+   history.forEach(hObj => {
+      const percentage = hObj.amount / moneySpent
+      const hour = hObj.hour.substring(0, 2)
+
+
+      const article = document.createElement('article')
+      article.innerHTML = hObj.amount
+      article.style.height = 150 * percentage + 'px'
+      article.style.gridColumn = Math.floor(hour / 2)
+      chart.appendChild(article)
+   })
+}
