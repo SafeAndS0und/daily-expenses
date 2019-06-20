@@ -60,3 +60,12 @@ button {
     background-color: #4455c6;
   }
 }
+
+p{
+  opacity: 0;
+  margin: 20px auto;
+  text-align: center;
+  width: 70%;
+  transition: .3s;
+  color: #25e079;
+}

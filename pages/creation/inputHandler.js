@@ -2,10 +2,15 @@ document.querySelector('button').addEventListener('click', () =>{
    const inputs = document.querySelectorAll('input')
    const values = Array.from(inputs).map(input => input.value)
    const panelObj = {
-      hour: values[0],
-      amount: values[2],
-      event: values[1],
+      hour: values[2],
+      amount: values[1],
+      event: values[0],
    }
+
+   const p = document.querySelector('p')
+   p.style.opacity = '1'
+
+   setTimeout(() => p.style.opacity = '0', 1500)
 
    // adding to localstorage the data
    // creating new item or appending to the existing one
