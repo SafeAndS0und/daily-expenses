@@ -15,8 +15,13 @@ async function initiate(){
    if(limit){
       const moneySpent = moneyState()
 
-      h1.innerHTML = `${moneySpent} / ${limit}`
-      left.innerHTML = limit - moneySpent
+      if(moneySpent){
+         h1.innerHTML = `${moneySpent} / ${limit}`
+         left.innerHTML = limit - moneySpent
+      } else{
+         h1.innerHTML = `0 / ${limit}`
+         left.innerHTML = limit
+      }
    }
 
    h1.addEventListener('click', () =>{
@@ -31,7 +36,7 @@ async function initiate(){
       const moneySpent = moneyState()
 
       if(input.value && input.value > 0){
-         h1.innerHTML = `${moneySpent || input.value} / ${input.value}`
+         h1.innerHTML = `${moneySpent || 0} / ${input.value}`
          left.innerHTML = input.value - moneySpent || input.value
          localStorage.setItem('limit', input.value)
       }
@@ -45,6 +50,10 @@ initiate()
 function drawColumns(){
    const history = JSON.parse(localStorage.getItem('history'))
    const chart = document.querySelector('.chart .columns')
+
+   if(!history)
+      return
+
 
    const moneySpent
       = history
