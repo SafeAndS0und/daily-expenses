@@ -1,13 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,600,700,800&display=swap");
 body, html {
-  margin: 0;
   padding: 0;
   background-color: #212343;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   overflow-x: hidden;
   position: relative;
-  min-height: 100vh; }
+  min-height: 100vh;
+  max-width: 800px;
+  margin: auto; }
 
 *, *:after, *:before {
   box-sizing: border-box; }
@@ -15,12 +16,8 @@ body, html {
 nav {
   width: 100%; }
 
-main, header, footer {
-  max-width: 900px;
-  margin: auto; }
-
 .wrapper {
-  padding-bottom: 50px;
+  padding-bottom: 70px;
   /* Footer height */ }
 
 main section .main-section-title {

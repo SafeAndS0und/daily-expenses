@@ -2,7 +2,6 @@
 @import '../../assets/scss/variables.scss';
 
 body, html {
-  margin: 0;
   padding: 0;
   background-color: $bodyColor;
   font-family: 'Open Sans', sans-serif;
@@ -11,6 +10,8 @@ body, html {
 
   position: relative;
   min-height: 100vh;
+  max-width: 800px;
+  margin: auto;
 }
 
 *, *:after, *:before {
@@ -21,12 +22,8 @@ nav {
   width: 100%;
 }
 
-main, header, footer {
-  max-width: 900px;
-  margin: auto;
-}
 .wrapper{
-  padding-bottom: 50px;    /* Footer height */
+  padding-bottom: 70px;    /* Footer height */
 }
 
 main {
