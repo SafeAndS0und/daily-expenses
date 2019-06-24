@@ -5,7 +5,9 @@ body, html {
   background-color: #212343;
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh; }
 
 *, *:after, *:before {
   box-sizing: border-box; }
@@ -17,6 +19,10 @@ main, header, footer {
   max-width: 900px;
   margin: auto; }
 
+.wrapper {
+  padding-bottom: 50px;
+  /* Footer height */ }
+
 main section .main-section-title {
   text-align: center;
   color: white;
@@ -26,6 +32,7 @@ main .add {
   position: fixed;
   bottom: 24px;
   right: 16px;
+  z-index: 2;
   padding: 16px 18px;
   background-color: #3571fa;
   color: white;
@@ -34,11 +41,12 @@ main .add {
     background-color: #1660ff; }
 
 footer {
+  position: absolute;
+  bottom: 0;
   display: grid;
   grid-auto-flow: column;
   width: 100%;
-  padding: 0 15px;
-  margin-top: 120px; }
+  padding: 0 15px; }
   footer p {
     color: #413e51;
     font-size: .9em; }

@@ -8,6 +8,9 @@ body, html {
   font-family: 'Open Sans', sans-serif;
   font-size: 16px;
   overflow-x: hidden;
+
+  position: relative;
+  min-height: 100vh;
 }
 
 *, *:after, *:before {
@@ -21,6 +24,9 @@ nav {
 main, header, footer {
   max-width: 900px;
   margin: auto;
+}
+.wrapper{
+  padding-bottom: 50px;    /* Footer height */
 }
 
 main {
@@ -38,6 +44,7 @@ main {
     position: fixed;
     bottom: 24px;
     right: 16px;
+    z-index: 2;
 
     padding: 16px 18px;
     background-color: #3571fa;
@@ -51,11 +58,12 @@ main {
 }
 
 footer {
+  position: absolute;
+  bottom: 0;
   display: grid;
   grid-auto-flow: column;
   width: 100%;
   padding: 0 15px;
-  margin-top: 120px;
 
   p {
     color: #413e51;
